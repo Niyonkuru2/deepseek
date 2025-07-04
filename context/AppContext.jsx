@@ -32,7 +32,7 @@ export const AppContextProvider=({children})=>{
         try {
            if(!user) return null;
            const token = await getToken();
-           const {data} = await axios.post('/api/chat/get',{},{headers:{
+           const {data} = await axios.get('/api/chat/get',{},{headers:{
             Authorization:`Bearer ${token}`
            }}) 
            if(data.success){
