@@ -3,7 +3,7 @@ import connectDb from "@/config/db";
 import User from "@/models/User";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-export async function POST() {
+export async function POST(req) {
     const wh = new Webhook(process.env.SIGNING_SECRET)
     const headerPayload = await headers()
     const svxHeaders ={
